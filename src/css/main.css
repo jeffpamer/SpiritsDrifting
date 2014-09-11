@@ -1,0 +1,16 @@
+
+body {
+    background-color: #1f1f1f;
+}
+
+input {
+    display: block;
+}
+
+.analyser-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -400px;
+}
