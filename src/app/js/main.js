@@ -1,35 +1,25 @@
-function Analyzer(audioContext) {
-    // Get instance of default AnalyserNode
-    this.parentInstance = audioContext.createAnalyser();
-    // console.log(this.parentInstance.__proto__);
-    // console.log(this.parentInstance.__proto__.__proto__);
-
-    // Add AnalyserNode specific properties and methods
-    for (var i in this.parentInstance) {
-        if (this.parentInstance.hasOwnProperty(i)) {
-            this[i] = this.parentInstance[i];
+require.config({
+    paths: {
+        "jquery": ["http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min",
+            "lib/jquery/jquery"],
+        "underscore": "lib/underscore/underscore-min",
+        "backbone": "lib/backbone/backbone",
+        "asq": "../../node_modules/asynquence/asq"
+    },
+    shim: {
+        "backbone": {
+            deps: ["jquery", "underscore"],
+            exports: "Backbone"
         }
-        /* else {
-                    this.__proto__[i] = this.parentInstance[i];
-                }*/
-    }
+    },
+    urlArgs: "bust=" + (new Date()).getTime()
+})
 
-    this.__proto__ = this.parentInstance.__proto__;
+require(['app'], function(App){
+    App.initialize();
+});
 
-    // Append prototypical methods to new prototype
-    /*for (var i in this.parentInstance.__proto__) {
-        this.__proto__[i] = this.parentInstance.__proto__[i];
-    }*/
-
-    // Anything inherited deeper than one level, completely inherit by reference
-    this.__proto__.__proto__ = this.parentInstance.__proto__.__proto__;
-}
-
-Analyzer.prototype.newMethod = function() {
-    console.log("IS THIS METHOD AVAILABLE???");
-};
-
-(function(AudioContext, requestAnimationFrame, cancelAnimationFrame) {
+/*(function(AudioContext, requestAnimationFrame, cancelAnimationFrame) {
 
     var audioContext = new AudioContext();
     var drawingContext, canvas;
@@ -167,7 +157,7 @@ Analyzer.prototype.newMethod = function() {
     });
 
     function Lemniscate(t) {
-        scale = 2 / (3 - Math.cos(2 * t));
+        var scale = 2 / (3 - Math.cos(2 * t));
         x = scale * Math.cos(t);
         y = scale * Math.sin(2 * t) / 2;
 
@@ -182,5 +172,5 @@ Analyzer.prototype.newMethod = function() {
     }
 
 })(window.AudioContext || window.webkitAudioContext,
-    window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame,
-    window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame);
+window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame,
+window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame);*/

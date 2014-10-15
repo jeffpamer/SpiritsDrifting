@@ -1,0 +1,22 @@
+{
+  "name": "SpiritsDrifting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffpamer/SpiritsDrifting"
+  },
+  "author": "jeff@mediumdivision.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeffpamer/SpiritsDrifting/issues"
+  },
+  "homepage": "https://github.com/jeffpamer/SpiritsDrifting",
+  "dependencies": {
+    "asynquence": "^0.5.4-a"
+  }
+}
