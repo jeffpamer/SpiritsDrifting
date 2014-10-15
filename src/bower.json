@@ -1,0 +1,36 @@
+{
+  "name": "SpiritsDrifting",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jeffpamer/SpiritsDrifting",
+  "authors": [
+    "jeffpamer <jeff@mediumdivision.com>"
+  ],
+  "description": "An audiovisual sketchbook",
+  "main": "app/js/main.js",
+  "moduleType": [
+    "amd",
+    "node"
+  ],
+  "keywords": [
+    "music",
+    "audiovis",
+    "audiovisual",
+    "experimental",
+    "webgl"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/js/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "requirejs": "~2.1.15",
+    "jquery": "~2.1.1",
+    "es6-promise": "~1.0.0"
+  }
+}
